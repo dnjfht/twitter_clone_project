@@ -10,12 +10,10 @@ export default function Auth() {
     const {
       target: { name, value },
     } = event;
-    // const name = event.target.name;
-    // const value = event.target.value;
     if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
+      setEmail(event.target.value);
+    } else {
+      setPassword(event.target.value);
     }
   };
 

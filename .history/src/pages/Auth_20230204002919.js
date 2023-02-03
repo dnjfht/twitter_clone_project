@@ -4,45 +4,26 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onChange = (event) => {
-    console.log(event.target.name);
+  const onChangeEmail = () => {};
 
-    const {
-      target: { name, value },
-    } = event;
-    // const name = event.target.name;
-    // const value = event.target.value;
-    if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
-    }
-  };
-
-  console.log(email, password);
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-  };
+  const onChangePassword = () => {};
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form>
         <input
-          name="email"
           type="text"
           placeholder="Email"
           required
           value={email}
-          onChange={onChange}
+          onChange={onChangeEmail}
         />
         <input
-          name="password"
           type="password"
           placeholder="Password"
           required
           value={password}
-          onChange={onChange}
+          onChange={onChangePassword}
         />
         <input type="submit" value="Log In" />
       </form>
@@ -50,6 +31,7 @@ export default function Auth() {
       <div>
         <button>Continue with Google</button>
         <button>Continue with Github</button>
+        https://nwitter-85f4d.firebaseapp.com/__/auth/handler
       </div>
     </div>
   );

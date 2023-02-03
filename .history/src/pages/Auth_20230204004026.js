@@ -4,19 +4,13 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onChange = (event) => {
-    console.log(event.target.name);
+  const onChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
 
-    const {
-      target: { name, value },
-    } = event;
-    // const name = event.target.name;
-    // const value = event.target.value;
-    if (name === "email") {
-      setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
-    }
+  const onChangePassword = (event) => {
+    console.log(event);
+    setPassword(event.target.value);
   };
 
   console.log(email, password);
@@ -27,14 +21,14 @@ export default function Auth() {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form>
         <input
           name="email"
           type="text"
           placeholder="Email"
           required
           value={email}
-          onChange={onChange}
+          onChange={onChangeEmail}
         />
         <input
           name="password"
@@ -42,9 +36,9 @@ export default function Auth() {
           placeholder="Password"
           required
           value={password}
-          onChange={onChange}
+          onChange={onChangePassword}
         />
-        <input type="submit" value="Log In" />
+        <input type="submit" value="Log In" onSubmit={onSubmit} />
       </form>
 
       <div>
