@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "index.css";
-import App from "App";
-import reportWebVitals from "reportWebVitals";
+import "./index.css";
+s;
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/compat/app";
 console.log(firebase);
 
@@ -10,9 +11,9 @@ console.log(firebase);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div>
+  <React.StrictMode>
     <App />
-  </div>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

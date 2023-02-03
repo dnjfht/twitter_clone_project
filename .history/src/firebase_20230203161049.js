@@ -16,5 +16,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const authService = getAuth(app);
-// auth service를 아주 많이 호출할 예정이기 때문.

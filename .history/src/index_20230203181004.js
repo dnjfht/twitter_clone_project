@@ -1,18 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "index.css";
-import App from "App";
-import reportWebVitals from "reportWebVitals";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase/compat/app";
 console.log(firebase);
 
-// StrictMode가 렌더링을 두 번 유발
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div>
+  <React.StrictMode>
+    // StrictMode가 렌더링을 두 번 유발
     <App />
-  </div>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
