@@ -1,5 +1,4 @@
 import Navigation from "components/Navigation";
-import Profile from "pages/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "../pages/Auth";
 import Home from "../pages/Home";
@@ -12,10 +11,8 @@ export default function Router({ isLoggedIn }) {
       {isLoggedIn && <Navigation />}
       <Routes>
         {isLoggedIn ? (
-          <Route>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
         ) : (
           <Route path="/" element={<Auth />} />
         )}

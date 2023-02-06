@@ -7,24 +7,17 @@ function App() {
   const [init, setInit] = useState(false);
   // firebase가 프로그램을 초기화하길 기다려야 함.
   // 그런 다음 isLoggedIn이 바뀌도록 해야 함.
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // console.log(authService.currentUser);
+  const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
+  console.log(authService.currentUser);
 
   useEffect(() => {
-    authService.onAuthStateChanged((user) => {
-      if (user) {
-        setIsLoggedIn(true);
-      } else {
-        setIsLoggedIn(false);
-      }
-      setInit(true);
-    });
+    authService.onAuthStateChanged((user) => console.log(user));
   }, []);
 
   return (
     <div>
-      {init ? <Router isLoggedIn={isLoggedIn} /> : "Initializing..."}
-      <footer>© {new Date().getFullYear()} Nwitter</footer>
+      <Router isLoggedIn={isLoggedIn} />
+      <div>© {new Date().getFullYear()} Nwitter</div>
     </div>
   );
 }

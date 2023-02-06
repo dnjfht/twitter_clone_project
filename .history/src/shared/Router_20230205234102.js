@@ -1,5 +1,3 @@
-import Navigation from "components/Navigation";
-import Profile from "pages/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Auth from "../pages/Auth";
 import Home from "../pages/Home";
@@ -9,13 +7,9 @@ export default function Router({ isLoggedIn }) {
   // 사용자가 로그인이 되어 있다면 home을 보여주고, 로그인이 되어있지 않다면 login page를 보여줌
   return (
     <BrowserRouter>
-      {isLoggedIn && <Navigation />}
       <Routes>
         {isLoggedIn ? (
-          <Route>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-          </Route>
+          <Route path="/" element={<Home />} />
         ) : (
           <Route path="/" element={<Auth />} />
         )}

@@ -64,11 +64,17 @@ export default function Auth() {
 
     if (name === "google") {
       provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(authService, provider);
+      console.log(result);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      // const token = credential.accessToken;
     } else if (name === "github") {
       provider = new GithubAuthProvider();
+      const result = await signInWithPopup(authService, provider);
+      console.log(result);
+      const credential = GithubAuthProvider.credentialFromResult(result);
+      // const token = credential.accessToken;
     }
-    const data = await signInWithPopup(authService, provider);
-    console.log(data);
   };
 
   return (

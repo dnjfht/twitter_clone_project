@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  signInWithPopup,
 } from "firebase/auth";
 
 export default function Auth() {
@@ -54,23 +51,6 @@ export default function Auth() {
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
 
-  const onSocialClick = async (event) => {
-    const {
-      target: { name },
-    } = event;
-    // const name = event.target.name;
-
-    let provider;
-
-    if (name === "google") {
-      provider = new GoogleAuthProvider();
-    } else if (name === "github") {
-      provider = new GithubAuthProvider();
-    }
-    const data = await signInWithPopup(authService, provider);
-    console.log(data);
-  };
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -102,12 +82,8 @@ export default function Auth() {
       </span>
 
       <div>
-        <button onClick={onSocialClick} name="google">
-          Continue with Google
-        </button>
-        <button onClick={onSocialClick} name="github">
-          Continue with Github
-        </button>
+        <button name="google">Continue with Google</button>
+        <button name="github">Continue with Github</button>
       </div>
     </div>
   );

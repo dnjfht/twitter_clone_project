@@ -1,4 +1,4 @@
-import { authService } from "../firebase";
+import { authService, firebaseInstance } from "../firebase";
 import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -63,12 +63,10 @@ export default function Auth() {
     let provider;
 
     if (name === "google") {
-      provider = new GoogleAuthProvider();
+      await signInWithPopup(authService, GoogleAuthProvider);
     } else if (name === "github") {
-      provider = new GithubAuthProvider();
+      await signInWithPopup(authService, GithubAuthProvider);
     }
-    const data = await signInWithPopup(authService, provider);
-    console.log(data);
   };
 
   return (

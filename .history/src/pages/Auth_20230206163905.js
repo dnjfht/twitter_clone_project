@@ -1,4 +1,4 @@
-import { authService } from "../firebase";
+import { authService, firebaseInstance } from "../firebase";
 import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,

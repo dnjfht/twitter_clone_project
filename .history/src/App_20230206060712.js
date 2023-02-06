@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       {init ? <Router isLoggedIn={isLoggedIn} /> : "Initializing..."}
-      <footer>© {new Date().getFullYear()} Nwitter</footer>
+      <div>© {new Date().getFullYear()} Nwitter</div>
     </div>
   );
 }

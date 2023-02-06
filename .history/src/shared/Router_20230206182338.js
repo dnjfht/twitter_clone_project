@@ -12,10 +12,10 @@ export default function Router({ isLoggedIn }) {
       {isLoggedIn && <Navigation />}
       <Routes>
         {isLoggedIn ? (
-          <Route>
+          <div>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
-          </Route>
+          </div>
         ) : (
           <Route path="/" element={<Auth />} />
         )}
