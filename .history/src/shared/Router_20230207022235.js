@@ -12,8 +12,7 @@ export default function Router({ isLoggedIn }) {
   // redirect 컴포넌트는 렌더링되면 to의 지정된 경로로 이동.
   // ex : <Route path="/redirect" element={<Redirect to="/" />} />
   // 하지만 React의 향후 버전과의 호환성 문제로 인해 redirect를 더 이상 지원하지 않음.
-  // router verson6으로 업데이트 되면서 redirect를 Navigate로 대신하게 되었음.
-  // ex : <Route path="*" element={<Navigate replace to="/" />} /> => 모든 route가 다 "/"로 재이동하는 것
+  // router verson6으로 업데이트 되면서 redirect를
   return (
     <BrowserRouter>
       {isLoggedIn && <Navigation />}
@@ -26,7 +25,7 @@ export default function Router({ isLoggedIn }) {
         ) : (
           <>
             <Route path="/" element={<Auth />} />
-            <Route path="*" element={<Navigate replace to="/" />} />
+            <Route path="/redirect" element={<Navigate replace to="/" />} />
           </>
         )}
       </Routes>
