@@ -21,6 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     getNweets();
+    console.log(nweets);
   }, []);
 
   const onSubmit = async (event) => {
@@ -57,8 +58,6 @@ export default function Home() {
   };
 
   console.log(nweet);
-
-  console.log(nweets);
   return (
     <div>
       <form onSubmit={onSubmit}>

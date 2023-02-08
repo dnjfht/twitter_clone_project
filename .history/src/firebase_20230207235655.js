@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,10 +18,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// export const firebaseInstance = firebaseConfig;
 // firebase의 firestore 인스턴스를 변수에 저장
+const db = getFirestore(app);
 
-export const dbService = getFirestore(app);
-
+// export const firebaseInstance = firebaseConfig;
 export const authService = getAuth(app);
 // auth service를 아주 많이 호출할 예정이기 때문.

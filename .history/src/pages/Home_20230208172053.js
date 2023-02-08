@@ -1,31 +1,11 @@
-import { addDoc, collection, getDocs, query } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import React, { useState } from "react";
 import { dbService } from "../firebase";
 
 export default function Home() {
   const [nweet, setNweet] = useState("");
-  const [nweets, setNweets] = useState([]);
-
-  const getNweets = async () => {
-    const dbNweets = query(collection(dbService, "nweets"));
-    console.log(dbNweets);
-    const querySnapshot = await getDocs(dbNweets);
-    querySnapshot.forEach((doc) => {
-      const nweetObj = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      setNweets((prev) => [nweetObj, ...prev]);
-    });
-  };
-
-  useEffect(() => {
-    getNweets();
-  }, []);
 
   const onSubmit = async (event) => {
-    // promise를 return하므로 async, await 사용
-
     event.preventDefault();
 
     // submit 할 때마다 document 생성시킬 거임.
@@ -38,7 +18,6 @@ export default function Home() {
         createAt: Date.now(), // createAt이라는 필드명으로 Date.now()를 이용.
       });
       console.log("Document written with ID:", docRef.id);
-      // document 안에는 id가 존재함. document가 생성될 때마다 id가 랜덤으로 생성됨.
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -57,8 +36,6 @@ export default function Home() {
   };
 
   console.log(nweet);
-
-  console.log(nweets);
   return (
     <div>
       <form onSubmit={onSubmit}>

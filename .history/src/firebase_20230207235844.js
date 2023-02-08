@@ -19,8 +19,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // export const firebaseInstance = firebaseConfig;
-// firebase의 firestore 인스턴스를 변수에 저장
 
+// firebase의 firestore 인스턴스를 변수에 저장
 export const dbService = getFirestore(app);
 
 export const authService = getAuth(app);

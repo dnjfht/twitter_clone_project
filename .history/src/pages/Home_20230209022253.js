@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, query } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { dbService } from "../firebase";
 
@@ -7,16 +7,8 @@ export default function Home() {
   const [nweets, setNweets] = useState([]);
 
   const getNweets = async () => {
-    const dbNweets = query(collection(dbService, "nweets"));
-    console.log(dbNweets);
-    const querySnapshot = await getDocs(dbNweets);
-    querySnapshot.forEach((doc) => {
-      const nweetObj = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      setNweets((prev) => [nweetObj, ...prev]);
-    });
+    const nweets = dbService.collection("nweets").get();
+    console.log(nweets);
   };
 
   useEffect(() => {
@@ -57,8 +49,6 @@ export default function Home() {
   };
 
   console.log(nweet);
-
-  console.log(nweets);
   return (
     <div>
       <form onSubmit={onSubmit}>

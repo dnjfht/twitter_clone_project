@@ -23,6 +23,8 @@ export default function Home() {
     getNweets();
   }, []);
 
+  console.log(nweets);
+
   const onSubmit = async (event) => {
     // promise를 return하므로 async, await 사용
 
@@ -57,8 +59,6 @@ export default function Home() {
   };
 
   console.log(nweet);
-
-  console.log(nweets);
   return (
     <div>
       <form onSubmit={onSubmit}>

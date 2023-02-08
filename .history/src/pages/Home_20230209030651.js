@@ -16,6 +16,7 @@ export default function Home() {
         id: doc.id,
       };
       setNweets((prev) => [nweetObj, ...prev]);
+      console.log(nweets);
     });
   };
 
@@ -57,8 +58,6 @@ export default function Home() {
   };
 
   console.log(nweet);
-
-  console.log(nweets);
   return (
     <div>
       <form onSubmit={onSubmit}>
