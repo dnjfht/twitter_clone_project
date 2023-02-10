@@ -8,14 +8,14 @@ import {
 import React, { useEffect, useState } from "react";
 import { dbService } from "../firebase";
 
-export default function Home({ userObj }) {
+export default function Home() {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
 
   const getNweets = async () => {
     const dbNweets = query(
       collection(dbService, "nweets"),
-      orderBy("createAt", "desc") // 시간 순으로 작성하기 위한 것
+      orderBy("createAt", "desc")
     );
     console.log(dbNweets);
     const querySnapshot = await getDocs(dbNweets);
@@ -30,7 +30,6 @@ export default function Home({ userObj }) {
         // 모든 doc.data()를 가지고
         id: doc.id,
         // doc.id에서 id를 가져와 nweetObj에 담아줄 거임.
-        creatorId: userObj.uid,
       };
       setNweets((prev) => [nweetObj, ...prev]);
       // 모든 이전 nweets에 대해 배열을 리턴.
@@ -92,7 +91,7 @@ export default function Home({ userObj }) {
       <div>
         {nweets.map((nweet) => (
           <div key={nweet.id}>
-            <p>{new Date(nweet.createAt).toLocaleDateString()}</p>
+            <p>{nweet.createAt}</p>
             <h3>{nweet.text}</h3>
           </div>
         ))}

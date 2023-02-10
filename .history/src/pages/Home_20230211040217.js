@@ -8,7 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { dbService } from "../firebase";
 
-export default function Home({ userObj }) {
+export default function Home() {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
 
@@ -30,7 +30,6 @@ export default function Home({ userObj }) {
         // 모든 doc.data()를 가지고
         id: doc.id,
         // doc.id에서 id를 가져와 nweetObj에 담아줄 거임.
-        creatorId: userObj.uid,
       };
       setNweets((prev) => [nweetObj, ...prev]);
       // 모든 이전 nweets에 대해 배열을 리턴.

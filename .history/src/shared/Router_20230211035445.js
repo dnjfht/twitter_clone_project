@@ -20,7 +20,7 @@ export default function Router({ isLoggedIn, userObj }) {
       <Routes>
         {isLoggedIn ? (
           <>
-            <Route userObj={userObj} path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
           </>
         ) : (

@@ -19,7 +19,6 @@ function App() {
         setIsLoggedIn(true);
         setUserObj(user);
         // 로그인을 하면 onAuthStateChanged 함수가 실행되고 로그인한 user를 받게 됨.
-        // user를 어딘가에 저장하고 필요할 때 쓸 수 있음.
       } else {
         setIsLoggedIn(false);
       }
@@ -27,14 +26,9 @@ function App() {
     });
   }, []);
 
-  console.log(userObj);
   return (
     <div>
-      {init ? (
-        <Router isLoggedIn={isLoggedIn} userObj={userObj} />
-      ) : (
-        "Initializing..."
-      )}
+      {init ? <Router isLoggedIn={isLoggedIn} /> : "Initializing..."}
       <footer>© {new Date().getFullYear()} Nwitter</footer>
     </div>
   );

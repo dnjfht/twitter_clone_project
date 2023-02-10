@@ -30,11 +30,7 @@ function App() {
   console.log(userObj);
   return (
     <div>
-      {init ? (
-        <Router isLoggedIn={isLoggedIn} userObj={userObj} />
-      ) : (
-        "Initializing..."
-      )}
+      {init ? <Router isLoggedIn={isLoggedIn} /> : "Initializing..."}
       <footer>© {new Date().getFullYear()} Nwitter</footer>
     </div>
   );
