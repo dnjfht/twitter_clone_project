@@ -11,9 +11,8 @@ export default function Home() {
     console.log(dbNweets);
     const querySnapshot = await getDocs(dbNweets);
     querySnapshot.forEach((doc) => {
-      //console.log(doc.data());
-      //console.log(doc.id);
-
+      console.log(doc.data());
+      console.log(doc.id);
       const nweetObj = {
         ...doc.data(),
         id: doc.id,

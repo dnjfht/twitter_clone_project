@@ -6,26 +6,6 @@ export default function Home() {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
 
-  const getNweets = async () => {
-    const dbNweets = query(collection(dbService, "nweets"));
-    console.log(dbNweets);
-    const querySnapshot = await getDocs(dbNweets);
-    querySnapshot.forEach((doc) => {
-      //console.log(doc.data());
-      //console.log(doc.id);
-
-      const nweetObj = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      setNweets((prev) => [nweetObj, ...prev]);
-    });
-  };
-
-  useEffect(() => {
-    getNweets();
-  }, []);
-
   const onSubmit = async (event) => {
     // promise를 return하므로 async, await 사용
 
@@ -60,6 +40,23 @@ export default function Home() {
   };
 
   console.log(nweet);
+
+  const getNweets = async () => {
+    const dbNweets = query(collection(dbService, "nweets"));
+    console.log(dbNweets);
+    const querySnapshot = await getDocs(dbNweets);
+    querySnapshot.forEach((doc) => {
+      const nweetObj = {
+        ...doc.data(),
+        id: doc.id,
+      };
+      setNweets((prev) => [nweetObj, ...prev]);
+    });
+  };
+
+  useEffect(() => {
+    getNweets();
+  }, []);
 
   console.log(nweets);
   return (
