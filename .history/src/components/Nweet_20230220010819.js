@@ -147,8 +147,8 @@ const ModifyCancelButton = styled.button`
   background: rgb(222, 52, 84);
   background: linear-gradient(
     0deg,
-    rgba(222, 52, 84, 1) 0%,
-    rgba(255, 168, 76, 0.7) 100%
+    rgba(222, 52, 84, 0.7) 0%,
+    rgba(255, 168, 76, 1) 100%
   );
   border: none;
   border-radius: 50px;

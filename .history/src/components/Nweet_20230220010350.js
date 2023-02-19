@@ -122,7 +122,7 @@ const ModifyInput = styled.input`
 const ModifySubmitInput = styled.input`
   width: 100%;
   padding: 16px;
-  margin-top: 30px;
+  margin-top: 20px;
   box-sizing: border-box;
   background: rgb(8, 160, 240);
   background: linear-gradient(
@@ -139,16 +139,16 @@ const ModifySubmitInput = styled.input`
   color: white;
 `;
 
-const ModifyCancelButton = styled.button`
+const ModifyCancelInput = styled.input`
   width: 100%;
   padding: 16px;
   margin-top: 10px;
   box-sizing: border-box;
-  background: rgb(222, 52, 84);
+  background: rgb(8, 160, 240);
   background: linear-gradient(
     0deg,
-    rgba(222, 52, 84, 1) 0%,
-    rgba(255, 168, 76, 0.7) 100%
+    rgba(8, 160, 240, 0.8) 0%,
+    rgba(82, 210, 202, 0.8) 100%
   );
   border: none;
   border-radius: 50px;
@@ -288,9 +288,9 @@ export default function Nweet({ nweet, isOwner }) {
                 />
               </ModifyInputWrap>
               <ModifySubmitInput type="submit" value="Update Nweet" />
-              <ModifyCancelButton onClick={toggleEditing}>
+              <ModifyCancelInput onClick={toggleEditing} value="cancel">
                 Cancel
-              </ModifyCancelButton>
+              </ModifyCancelInput>
             </ModifyForm>
           </>
         ) : (

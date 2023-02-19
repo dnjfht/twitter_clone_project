@@ -124,11 +124,11 @@ const ModifySubmitInput = styled.input`
   padding: 16px;
   margin-top: 30px;
   box-sizing: border-box;
-  background: rgb(8, 160, 240);
+  background: rgb(222, 52, 84);
   background: linear-gradient(
     0deg,
-    rgba(8, 160, 240, 0.8) 0%,
-    rgba(82, 210, 202, 0.8) 100%
+    rgba(222, 52, 84, 1) 0%,
+    rgba(244, 194, 142, 1) 100%
   );
   border: none;
   border-radius: 50px;
@@ -148,7 +148,7 @@ const ModifyCancelButton = styled.button`
   background: linear-gradient(
     0deg,
     rgba(222, 52, 84, 1) 0%,
-    rgba(255, 168, 76, 0.7) 100%
+    rgba(244, 142, 142, 1) 100%
   );
   border: none;
   border-radius: 50px;

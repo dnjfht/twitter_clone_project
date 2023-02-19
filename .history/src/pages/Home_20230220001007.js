@@ -92,10 +92,15 @@ const SubmitButton = styled.button`
   top: -4px;
   right: -4px;
 
-  transition: all ease-in-out 0.5s;
+  transition: all ease 0.5s;
 
   &:hover {
-    background-color: #52d2ca;
+    background: rgb(8, 160, 240);
+    background: linear-gradient(
+      0deg,
+      rgba(8, 160, 240, 1) 0%,
+      rgba(82, 210, 202, 1) 100%
+    );
   }
 `;
 

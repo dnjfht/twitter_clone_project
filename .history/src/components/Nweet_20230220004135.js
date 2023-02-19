@@ -72,91 +72,11 @@ const PostImg = styled.img`
 
 const DeleteNweetButton = styled.button`
   border: none;
-  background-color: transparent;
+  background: opacity;
 `;
 
 const EditNweetButton = styled.button`
   margin-left: 20px;
-
-  border: none;
-  background-color: transparent;
-`;
-
-const ModifyForm = styled.form`
-  width: 100%;
-  margin-top: 20px;
-`;
-
-const ModifyInputWrap = styled.div`
-  width: 100%;
-  height: 70px;
-
-  border: 1px solid transparent;
-  border-radius: 50px;
-  background-image: linear-gradient(white, white),
-    linear-gradient(
-      to left,
-      rgba(8, 160, 240, 1) 20%,
-      rgba(82, 210, 202, 0.8) 70%
-    );
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
-  position: relative;
-`;
-
-const ModifyInput = styled.input`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: transparent;
-
-  border: none;
-
-  outline: none;
-
-  font-size: 16px;
-`;
-
-const ModifySubmitInput = styled.input`
-  width: 100%;
-  padding: 16px;
-  margin-top: 30px;
-  box-sizing: border-box;
-  background: rgb(8, 160, 240);
-  background: linear-gradient(
-    0deg,
-    rgba(8, 160, 240, 0.8) 0%,
-    rgba(82, 210, 202, 0.8) 100%
-  );
-  border: none;
-  border-radius: 50px;
-
-  outline: none;
-
-  font-size: 14px;
-  color: white;
-`;
-
-const ModifyCancelButton = styled.button`
-  width: 100%;
-  padding: 16px;
-  margin-top: 10px;
-  box-sizing: border-box;
-  background: rgb(222, 52, 84);
-  background: linear-gradient(
-    0deg,
-    rgba(222, 52, 84, 1) 0%,
-    rgba(255, 168, 76, 0.7) 100%
-  );
-  border: none;
-  border-radius: 50px;
-
-  outline: none;
-
-  font-size: 14px;
-  color: white;
 `;
 
 export default function Nweet({ nweet, isOwner }) {
@@ -277,21 +197,17 @@ export default function Nweet({ nweet, isOwner }) {
       <NweetBottomWrap>
         {editing ? (
           <>
-            <ModifyForm onSubmit={onSubmit}>
-              <ModifyInputWrap>
-                <ModifyInput
-                  type="text"
-                  value={newNweet}
-                  required
-                  placeholder="Edit your nweet"
-                  onChange={onChangeText}
-                />
-              </ModifyInputWrap>
-              <ModifySubmitInput type="submit" value="Update Nweet" />
-              <ModifyCancelButton onClick={toggleEditing}>
-                Cancel
-              </ModifyCancelButton>
-            </ModifyForm>
+            <form onSubmit={onSubmit}>
+              <input
+                type="text"
+                value={newNweet}
+                required
+                placeholder="Edit your nweet"
+                onChange={onChangeText}
+              />
+              <input type="submit" value="Update Nweet" />
+            </form>
+            <button onClick={toggleEditing}>Cancel</button>
           </>
         ) : (
           <>

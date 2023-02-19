@@ -92,7 +92,7 @@ const SubmitButton = styled.button`
   top: -4px;
   right: -4px;
 
-  transition: all ease-in-out 0.5s;
+  transition: all ease 0.5s;
 
   &:hover {
     background-color: #52d2ca;
