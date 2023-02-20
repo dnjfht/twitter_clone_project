@@ -107,8 +107,7 @@ const EmailChangeInput = styled.input`
     color: rgba(255, 255, 255, 0.6);
   }
   &:focus {
-    border-radius: 50px;
-    border: none;
+    background-color: transparent;
   }
 `;
 
@@ -126,10 +125,6 @@ const PasswordChangeInput = styled.input`
   color: white;
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
-  }
-  &:focus {
-    border-radius: 50px;
-    border: none;
   }
 `;
 

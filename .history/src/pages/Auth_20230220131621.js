@@ -106,10 +106,6 @@ const EmailChangeInput = styled.input`
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
-  &:focus {
-    border-radius: 50px;
-    border: none;
-  }
 `;
 
 const PasswordChangeInput = styled.input`
@@ -126,10 +122,6 @@ const PasswordChangeInput = styled.input`
   color: white;
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
-  }
-  &:focus {
-    border-radius: 50px;
-    border: none;
   }
 `;
 
@@ -341,7 +333,7 @@ export default function Auth() {
               type="submit"
               value={newAccount ? "Create Account" : "Sign In"}
             />
-            {error}
+            <p style={{ color: "red" }}>{error}</p>
           </ChangeFormWrap>
 
           <SwitchChangeAccount onClick={toggleAccount}>

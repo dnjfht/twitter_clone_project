@@ -127,10 +127,6 @@ const PasswordChangeInput = styled.input`
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
-  &:focus {
-    border-radius: 50px;
-    border: none;
-  }
 `;
 
 const SubmitInput = styled.input`
