@@ -186,11 +186,11 @@ const GoogleSocialLoginButton = styled.button`
   box-sizing: border-box;
   border-radius: 50px;
 
-  background: rgb(62, 159, 224);
+  background: rgb(255, 119, 119);
   background: linear-gradient(
     0deg,
-    rgba(62, 159, 224, 1) 15%,
-    rgba(85, 241, 255, 1) 100%
+    rgba(255, 119, 119, 1) 15%,
+    rgba(233, 157, 219, 1) 100%
   );
   border: none;
   border-radius: 50px;
@@ -215,11 +215,11 @@ const GithubSocialLoginButton = styled.button`
   box-sizing: border-box;
   border-radius: 50px;
 
-  background: rgb(62, 159, 224);
+  background: rgb(255, 119, 119);
   background: linear-gradient(
     0deg,
-    rgba(62, 159, 224, 1) 15%,
-    rgba(85, 241, 255, 1) 100%
+    rgba(255, 119, 119, 1) 15%,
+    rgba(233, 157, 219, 1) 100%
   );
   border: none;
   border-radius: 50px;
